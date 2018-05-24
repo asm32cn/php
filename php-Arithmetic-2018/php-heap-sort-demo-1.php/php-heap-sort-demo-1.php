@@ -9,7 +9,7 @@ class HeapSortDemo1{
     function HeapSort(&$data){
         $nHeapSize = sizeof($data);
         // BuildHeap
-        for($i = $nHeapSize / 2 - 1; $i >= 0; $i--){
+        for($i = (int)($nHeapSize / 2) - 1; $i >= 0; $i--){
             $this->Heapify($data, $i, $nHeapSize);
         }
         // HeapSort
