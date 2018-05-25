@@ -2,6 +2,7 @@
 // php-bucket-sort-demo-1.php
 define('MAX', 100);
 define('bn', 5);
+
 $nFactor = (int)(MAX % bn ? MAX / bn + 1 : MAX / bn);
 
 class BucketSortDemo1{
