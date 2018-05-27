@@ -2,26 +2,26 @@
 // php-selectionsort-demo-1.php
 
 class SelectionSortDemo1{
-    function DisplayData($data){
-        print join(', ', $data) . "\n";
-    }
+	function DisplayData($data){
+		print join(', ', $data) . "\n";
+	}
 
-    function SelectionSort(&$data){
-        $n = sizeof($data);
-        for($i = 0; $i < $n - 1; $i++){
-            $nMin = $i;
-            for($j = $i + 1; $j < $n; $j++){
-                if($data[$j] < $data[$nMin]){
-                    $nMin = $j;
-                }
-            }
-            if($nMin != $i){
-                $temp = $data[$nMin];
-                $data[$nMin] = $data[$i];
-                $data[$i] = $temp;
-            }
-        }
-    }
+	function SelectionSort(&$data){
+		$n = sizeof($data);
+		for($i = 0; $i < $n - 1; $i++){
+			$nMin = $i;
+			for($j = $i + 1; $j < $n; $j++){
+				if($data[$j] < $data[$nMin]){
+					$nMin = $j;
+				}
+			}
+			if($nMin != $i){
+				$temp = $data[$nMin];
+				$data[$nMin] = $data[$i];
+				$data[$i] = $temp;
+			}
+		}
+	}
 }
 
 // $data = array(41, 67, 34, 0, 69, 24, 78, 58, 62, 64, 5, 45, 81, 27, 61, 91, 95, 42, 27, 36);
