@@ -2,32 +2,32 @@
 // php-quicksort-demo-1.php
 
 class QuickSortDemo1{
-    function DisplayData($data){
-        print join(', ', $data) . "\n";
-    }
+	function DisplayData($data){
+		print join(', ', $data) . "\n";
+	}
 
-    function QuickSort(&$data, $nLeft, $nRight){
-        if($nLeft < $nRight){
-            $nKey = $data[$nLeft];
-            $nLow = $nLeft;
-            $nHigh = $nRight;
-            while($nLow < $nHigh){
-                while($nLow < $nHigh && $data[$nHigh] >= $nKey){
-                    $nHigh--;
-                }
-                $data[$nLow] = $data[$nHigh];
-                while($nLow < $nHigh && $data[$nLow] <= $nKey){
-                    $nLow++;
-                }
-                $data[$nHigh] = $data[$nLow];
-            }
-            $data[$nLow] = $nKey;
+	function QuickSort(&$data, $nLeft, $nRight){
+		if($nLeft < $nRight){
+			$nKey = $data[$nLeft];
+			$nLow = $nLeft;
+			$nHigh = $nRight;
+			while($nLow < $nHigh){
+				while($nLow < $nHigh && $data[$nHigh] >= $nKey){
+					$nHigh--;
+				}
+				$data[$nLow] = $data[$nHigh];
+				while($nLow < $nHigh && $data[$nLow] <= $nKey){
+					$nLow++;
+				}
+				$data[$nHigh] = $data[$nLow];
+			}
+			$data[$nLow] = $nKey;
 
-            $this->QuickSort($data, $nLeft, $nLow - 1);
-            $this->QuickSort($data, $nLow + 1, $nRight);
-        }
+			$this->QuickSort($data, $nLeft, $nLow - 1);
+			$this->QuickSort($data, $nLow + 1, $nRight);
+		}
 
-    }
+	}
 }
 
 // $data = array(41, 67, 34, 0, 69, 24, 78, 58, 62, 64, 5, 45, 81, 27, 61, 91, 95, 42, 27, 36);
